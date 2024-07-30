@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Materiales</title>
+<style>
+body {
+    background-color: #deb887;
+    font-family:'Comic Sans MS';
+}
+h1 {
+color: rgb(202, 79, 92); 
+font-family: 'Comic Sans MS';
+text-align: center; 
+}
+        #title-bar {
+            display: block;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            height: 5px;
+            background-color:   #ddd6d6 ;
+        }
+        .dropdown-content a {
+            color: rgb(202, 79, 92);
+            padding: 20px 30px;
+            text-decoration: none;
+            display: block;
+            transition: background-color 0.3s ease;
+        }
+        .dropdown-content a:hover {
+            background-color: #ddd6d6  ;
+        }
+#contenedor {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.column {
+    flex: 1;
+    padding: 10px;
+    box-sizing: border-box;
+}
+.column ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+.column li {
+    margin-bottom: 20px;
+    text-align: center;
+    color: #ca4f5c;
+    font-size: 20px;
+}
+.column img {
+    display: block;
+    margin: 0 auto;
+    width: 200px;
+    height: 200px;
+}
+</style>
+</head>
+<body>
+    <h1>Materiales</h1>
+    <span id="title-bar"></span>
+    <div id="contenedor">
+        <div class="column">
+            <ul>
+                <li>Arduino Uno</li>
+                <img src="Arduino_UnoR3.png" />
+                <li>Sensor de temperatura y humedad DHT11</li>
+                <img src="DHT11-300x289.webp" />
+                <li>Ventiladores 12V</li>
+                <img src="Ventiladores.png" />
+            </ul>
+        </div>
+        <div class="column">
+            <ul>
+                <li>Módulo de pantalla OLED 128x64</li>
+                <img src="unnamed.png" />
+                <li>Protoboard o baquela</li>
+                <img src="Baquela.png" />
+                <img src="Protoboard.png" />
+                <li>Adaptador 12V</li>
+                <img src="adaptador.png" />
+            </ul>
+        </div>
+    </div>
+    <ul>
+        <li class="dropdown">
+            <div class="dropdown-content">
+                <h3><a href="index.html">Atrás</a></h3>
+            </div>
+        </li>
+    </ul>
+</body>
+</html>
