@@ -7,70 +7,124 @@
     <title>Problemática</title>
     <style>
         body {
-            background-color: rgb(222, 184, 135);
+            background-color: #31293F;
             line-height: 1.8;
+            font-family: 'Comic Sans MS';
         }
+
         h1 {
-        color:  #5e95a9  ; 
-        text-align: center;
-        font-family: 'Comic Sans MS';
+            color: #ffffff;
+            text-align: center;
         }
+
         h3 {
-        color: rgb( 45, 102, 109 );
-        margin: 40px; 
-        
-        font-family: 'Comic Sans MS';
+            color: rgb(0, 0, 0);
+            margin: 20px;
         }
- 
-                #title-bar {
-                    display: block;
-                    margin-top: 20px;
-                    margin-bottom: 20px;
-                    height: 5px;
-                    background-color: #bcdafa  ;
-                }
-                .dropdown-content a {
-                    color:  #2d666d ;
-                    padding: 20px 30px;
-                    text-decoration: none;
-                    display: block;
-                    transition: background-color 0.3s ease;
-                    margin-top: 110px;
-                }
-                .dropdown-content a:hover {
-                    background-color: #bcdafa;
-                }
-        </style>
+
+        #title-bar {
+            display: block;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            height: 5px;
+            background-color: #ffffff;
+        }
+
+        .content {
+            display: flex;
+            justify-content: space-between;
+            max-width: 1250px;
+            margin: 0 auto;
+        }
+
+        .text-box {
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            width: 60%;
+            margin-right: 20px;
+        }
+
+        .image-box {
+            width: 35%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .image-box img {
+            max-width: 100%;
+            margin-bottom: 20px;
+            border-radius: 15px;
+        }
+
+        .dropdown-content {
+            background-color: #ffffff;
+            padding: 20px;
+            text-align: center;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            max-width: 200px;
+            margin: 50px auto;
+            transition: background-color 0.3s ease;
+        }
+
+        .dropdown-content:hover {
+            background-color: #31293F;
+        }
+
+        .dropdown-content a {
+            color: #000000;
+            padding: 10px 20px;
+            text-decoration: none;
+            display: block;
+            transition: color 0.3s ease;
+        }
+
+        .dropdown-content:hover a {
+            color: #ffffff;
+        }
+    </style>
 </head>
 
-<body style="background-color: rgb(222, 184, 135);">
-    
-        <h1>Problemática</h1>
-        <span id="title-bar"></span>
-    <h3><p>
-        Se ha notado que, en las aulas de la institución se llega a tener altas temperaturas a ciertas horas del día, lo
-        que puede generar un impacto negativo en el aprendizaje de los estudiantes y, por ende, en su desempeño en
-        general; en varios entornos, desde los espacios generales del colegio hasta lugares específicos como la
-        Biblioteca del colegio Brasilia Bosa IED. Este efecto es más notable durante las horas de la tarde, lo que, a su
-        vez, puede causar malestares tales como estrés, incomodidad, malos olores, bajo rendimiento académico, entre
-        otros. Además, el personal docente también se ve afectado al tratar de mantener un ambiente óptimo para la
-        enseñanza en estas condiciones. Las altas temperaturas no solo afectan el bienestar de los estudiantes y el
-        personal docente, sino que también pueden dañar los recursos educativos. Los libros y materiales de estudio
-        (como los computadores y el televisor de la sala) son sensibles a las condiciones de temperatura y humedad, lo
-        que puede llevar a su deterioro. Esto aumenta los costos de reemplazo y dificulta el acceso a recursos
-        esenciales para la educación. En este contexto, la biblioteca se convierte en un punto de enfoque crucial. Como
-        un espacio destinado para el estudio y la investigación, debería ser un refugio que fomente el conocimiento y el
-        desarrollo académico. Sin embargo, las altas temperaturas pueden convertir este espacio en un lugar incómodo y
-        poco propicio para el estudio, lo que, a su vez, desincentiva a los estudiantes a utilizarlo de manera efectiva
-        y productiva para el fin de aprender.
-     </p></h3>
-     <ul>
-        <li class="dropdown">
-            <div class="dropdown-content">
-              <h3><a href="index.html">Atrás</a></h3>
-            </div>
-        </li>
-    </ul>
+<body>
+
+    <h1>Problemática</h1>
+    <span id="title-bar"></span>
+
+    <div class="content">
+        <div class="text-box">
+            <h3>
+                Se ha notado que, en las aulas de la institución se llega a tener altas temperaturas a ciertas horas del
+                día, lo que puede generar un impacto negativo en el aprendizaje de los estudiantes y, por ende, en su
+                desempeño en general; en varios entornos, desde los espacios generales del colegio hasta lugares específicos como la
+                Biblioteca del colegio Brasilia Bosa IED. Este efecto es más notable durante las horas de la tarde, lo que, a su
+                vez, puede causar malestares tales como estrés, incomodidad, malos olores, bajo rendimiento académico, entre
+                otros. Además, el personal docente también se ve afectado al tratar de mantener un ambiente óptimo para la
+                enseñanza en estas condiciones. Las altas temperaturas no solo afectan el bienestar de los estudiantes y el
+                personal docente, sino que también pueden dañar los recursos educativos. Los libros y materiales de estudio
+                (como los computadores y el televisor de la sala) son sensibles a las condiciones de temperatura y humedad, lo
+                que puede llevar a su deterioro. Esto aumenta los costos de reemplazo y dificulta el acceso a recursos
+                esenciales para la educación. En este contexto, la biblioteca se convierte en un punto de enfoque crucial. Como
+                un espacio destinado para el estudio y la investigación, debería ser un refugio que fomente el conocimiento y el
+                desarrollo académico. Sin embargo, las altas temperaturas pueden convertir este espacio en un lugar incómodo y
+                poco propicio para el estudio, lo que, a su vez, desincentiva a los estudiantes a utilizarlo de manera efectiva
+                y productiva para el fin de aprender.
+            </h3>
+        </div>
+
+        <div class="image-box">
+            <img src="imagenproblema.jpeg" alt="Problema 1">
+            <img src="imagenproblema2.jpeg" alt="Problema 2">
+        </div>
+    </div>
+
+    <div class="dropdown-content">
+        <a href="index.html">Atrás</a>
+    </div>
+
 </body>
 
 </html>

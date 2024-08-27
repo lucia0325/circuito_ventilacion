@@ -7,77 +7,86 @@
     <title>Document</title>
     <style>
         body {
-            background-color: #deb887;
-            
+            background-color: #31293F;
         }
+        h1, h2, h3{
+            font-family: 'Comic Sans MS';
+            color: rgb(0, 0, 0);
+            text-align: center;
+        }
+        
         h1 {
-        color: rgb(123, 86, 144); 
-        text-align: center; 
-        font-family: 'Comic Sans MS';
+            color: #ffffff;
         }
-        h3 {
-        color: rgb( 66, 35, 83 ); 
-        font-family: 'Comic Sans MS';
-        margin-bottom: 50px;
+        
+        p, h3, h2,li,a{
+            margin-bottom: 10px;
+            font-family: 'Comic Sans MS';
         }
-        h2 {
-        color: rgb( 114, 85, 117 );
-        font-family: 'Comic Sans MS';
-        margin-bottom: 50px;
+        #title-bar {
+            display: block;
+            margin-top: 20px;
+            margin-bottom: 50px;
+            height: 5px;
+            background-color: #ffffff;
         }
-        p {
-        color: rgb(66, 35, 83); 
-        text-align: center; 
-        font-family: 'Comic Sans MS';
-        margin-bottom: 20px;
+        .content-box {
+            background-color: #ffffff;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            max-width: 1220px;
+            margin: 20px auto;
         }
-                #title-bar {
-                    display: block;
-                    margin-top: 20px;
-                    margin-bottom: 50px;
-                    height: 5px;
-                    background-color: #cfc1d1;
-                }
-                .dropdown-content a {
-                    color:  #422353 ;
-                    padding: 20px 30px;
-                    text-decoration: none;
-                    display: block;
-                    transition: background-color 0.3s ease;
-                    margin-top: 85px;
-                    
-                }
-                .dropdown-content a:hover {
-                    background-color: #cfc1d1 ;
-                    
-                }
-        </style>
+        .content-box img {
+            display: block;
+            margin: 0 auto;
+        }
+        .dropdown-content {
+            background-color: #ffffff;
+            padding: 20px;
+            text-align: center;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            max-width: 200px;
+            margin: 50px auto;
+            transition: background-color 0.3s ease;
+        }
+        .dropdown-content:hover {
+            background-color: #31293F;
+        }
+        .dropdown-content a {
+            color: #000000;
+            padding: 10px 20px;
+            text-decoration: none;
+            display: block;
+            transition: color 0.3s ease;
+        }
+        .dropdown-content:hover a {
+            color: #ffffff;
+        }
+    </style>
 </head>
 
-<body style="background-color: #deb887;">
-    <ul style="color: #ffffff;font-size: 20px;"></ul>
-        <h1>Objetivos</h1>
-        <span id="title-bar"></span>
-   
-        <h2> Objetivo General </h2>
+<body>
+    <h1>Objetivos</h1>
+    <span id="title-bar"></span>
     
-    <h3><p>Construir un circuito de detección automático de temperatura del ambiente por medio de arduino para la activación
-        de un ventilador, que permita regular la temperatura en la biblioteca I.E.D Brasilia Bosa. </p></h3>
-   
+    <div class="content-box">
+        <h2>Objetivo General</h2>
+        <p>Construir un circuito de detección automático de temperatura del ambiente por medio de Arduino para la activación de un ventilador, que permita regular la temperatura en la biblioteca I.E.D Brasilia Bosa.</p>
+        <img src="imagendeobjetivos.jpeg" width="300px">
         <h2>Objetivos específicos</h2>
+        <ol>
+            <li>Investigar a qué temperatura sería conveniente activar el sistema y el funcionamiento de los componentes del circuito.</li>
+            <li>Ejecutar pruebas por medio del programa “Tinkercad” para asegurar el buen funcionamiento del circuito.</li>
+            <li>Instalar el prototipo en la biblioteca para comprobar su funcionamiento.</li>
+        </ol>
     </div>
- <ol>
-    <h3><li> Investigar a qué temperatura sería conveniente activar el sistema y  el funcionamiento de los componentes del circuito. </li></h3>
-    <h3><li> Ejecutar pruebas por medio del programa “Tinkercad” para asegurar el buen funcionamiento del circuito. </li></h3>
-    <h3><li> Instalar el prototipo en la biblioteca para comprobar su funcionamiento. </li></h3>
-</ol>
-    <ul>
-        <li class="dropdown">
-            <div class="dropdown-content">
-              <h3><a href="index.html">Atrás</a></h3>
-            </div>
-        </li>
-    </ul>
+
+    <div class="dropdown-content">
+        <a href="index.html">Atrás</a>
+    </div>
 </body>
 
 </html>

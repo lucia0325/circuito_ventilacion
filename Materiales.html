@@ -6,58 +6,100 @@
     <title>Materiales</title>
 <style>
 body {
-    background-color: #deb887;
-    font-family:'Comic Sans MS';
+    background-color: #31293F;
+    font-family: 'Comic Sans MS';
+    margin: 0;
+    padding: 0;
 }
 h1 {
-color: rgb(202, 79, 92); 
-font-family: 'Comic Sans MS';
-text-align: center; 
+    color: rgb(255, 255, 255); 
+    font-family: 'Comic Sans MS';
+    text-align: center; 
+    margin: 20px 0;
 }
-        #title-bar {
-            display: block;
-            margin-top: 20px;
-            margin-bottom: 20px;
-            height: 5px;
-            background-color:   #ddd6d6 ;
-        }
-        .dropdown-content a {
-            color: rgb(202, 79, 92);
-            padding: 20px 30px;
-            text-decoration: none;
-            display: block;
-            transition: background-color 0.3s ease;
-        }
-        .dropdown-content a:hover {
-            background-color: #ddd6d6  ;
-        }
+#title-bar {
+    display: block;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    height: 5px;
+    background-color: #ffffff;
+}
 #contenedor {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
 }
-.column {
-    flex: 1;
-    padding: 10px;
-    box-sizing: border-box;
-}
-.column ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-}
-.column li {
+.item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
     margin-bottom: 20px;
-    text-align: center;
-    color: #ca4f5c;
-    font-size: 20px;
 }
-.column img {
-    display: block;
-    margin: 0 auto;
+.item:nth-child(odd) {
+    flex-direction: row-reverse; 
+}
+.circle-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 220px;
+    height: 220px;
+    background-color: #ffffff; 
+    border-radius: 50%;
+}
+.circle-container img {
     width: 200px;
     height: 200px;
+    border-radius: 60%; 
 }
+.white-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 1000px; 
+    height: 200px; 
+    background-color: #ffffff;
+    border-radius: 20px; 
+    padding: 20px;
+    box-sizing: border-box;
+    text-align: center;
+}
+.item-title {
+    color: #000000;
+    font-size: 24px;
+    margin-bottom: 10px; 
+}
+p {
+    color: #333;
+    font-size: 18px;
+    margin: 0; 
+}
+.dropdown-content {
+    background-color: #ffffff;
+    padding: 5px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    max-width: 200px;
+    margin: 10px auto;
+    transition: background-color 0.3s ease;
+        }
+    
+.dropdown-content:hover {
+    background-color: #31293F;
+        }
+.dropdown-content a {
+    color: #000000;
+    padding: 10px 20px;
+    text-decoration: none;
+    display: block;
+    transition: color 0.3s ease;
+        }
+.dropdown-content:hover a {
+    color: #ffffff;
+        }
 </style>
 </head>
 <body>
@@ -65,33 +107,77 @@ text-align: center;
     <span id="title-bar"></span>
     <div id="contenedor">
         <div class="column">
-            <ul>
-                <li>Arduino Uno</li>
-                <img src="Arduino_UnoR3.png" />
-                <li>Sensor de temperatura y humedad DHT11</li>
-                <img src="DHT11-300x289.webp" />
-                <li>Ventiladores 12V</li>
-                <img src="Ventiladores.png" />
-            </ul>
-        </div>
-        <div class="column">
-            <ul>
-                <li>Módulo de pantalla OLED 128x64</li>
-                <img src="unnamed.png" />
-                <li>Protoboard o baquela</li>
-                <img src="Baquela.png" />
-                <img src="Protoboard.png" />
-                <li>Adaptador 12V</li>
-                <img src="adaptador.png" />
-            </ul>
+            <div class="item">
+                <div class="white-box">
+                    <div class="item-title">Arduino Uno</div>
+                    <p>Arduino es una plataforma de creación de electrónica de código abierto, la cual está basada en hardware y software libre, flexible y fácil de utilizar para los creadores y desarrolladores. Esta plataforma permite crear diferentes tipos de microordenadores de una sola placa a los que la comunidad de creadores puede darles diferentes tipos de uso.</p>
+                </div>
+                <div class="circle-container">
+                    <img src="Arduino_UnoR3.png" />
+                </div>
+            </div>
+            <div class="item">
+                <div class="white-box">
+                    <div class="item-title">Sensor de temperatura y humedad DHT11</div>
+                    <p>Es un sensor digital de temperatura y humedad relativa de bajo costo y fácil uso. Integra un sensor capacitivo de humedad y un termistor para medir el aire circundante.</p>
+                </div>
+                <div class="circle-container">
+                    <img src="DHT11-300x289.webp" />
+                </div>
+            </div>
+            <div class="item">
+                <div class="white-box">
+                    <div class="item-title">Ventiladores 12V</div>
+                    <p>Está concebido para producir una corriente de aire y es utilizado como disipador de calor en muchos circuitos. Su tamaño reducido le permite ser acoplado a circuitos pequeños y ligeros.</p>
+                </div>
+                <div class="circle-container">
+                    <img src="Ventiladores.png" />
+                </div>
+            </div>
+            <div class="item">
+                <div class="white-box">
+                    <div class="item-title">Módulo de pantalla OLED 128x64</div>
+                    <p>Es una mini pantalla que permite mostrar tanto texto como gráficos. Además, por ser de tipo OLED, no necesita de retroiluminación como los LCD, lo que hace que su consumo de energía sea mucho menor y aumenta su contraste.</p>
+                </div>
+                <div class="circle-container">
+                    <img src="unnamed.png" />
+                </div>
+            </div>
+            <div class="item">
+                <div class="white-box">
+                    <div class="item-title">Baquela</div>
+                    <p>Fue el primer plástico comercial completamente sintético, moldeable en caliente, y que una vez enfriado producía un material duro y resistente al calor, a la electricidad y a los solventes. Su aplicación como aislante eléctrico fue inmediata, pero pronto sus usos comenzaron a proliferar.</p>
+                </div>
+                <div class="circle-container">
+                    <img src="Baquela.png" />
+                </div>
+            </div>
+            <div class="item">
+                <div class="white-box">
+                    <div class="item-title">Protoboard</div>
+                    <p>Es una placa de pruebas en los que se pueden insertar elementos electrónicos y cables con los que se arman circuitos sin la necesidad de soldar ninguno de los componentes. Las Protoboards tienen orificios conectados entre sí por medio de pequeñas láminas metálicas.</p>
+                </div>
+                <div class="circle-container">
+                    <img src="Protoboard.png" />
+                </div>
+            </div>
+            <div class="item">
+                <div class="white-box">
+                    <div class="item-title">Adaptador 12V</div>
+                    <p>Es un dispositivo que permite la conexión de aparatos eléctricos a una fuente de alimentación. Permite por lo tanto convertir los diferentes niveles y formas de energía eléctrica: tanto convertir la corriente alterna en corriente continua, y modificar los voltajes.</p>
+                </div>
+                <div class="circle-container">
+                    <img src="adaptador.png" />
+                </div>
+            </div>
         </div>
     </div>
     <ul>
-        <li class="dropdown">
-            <div class="dropdown-content">
-                <h3><a href="index.html">Atrás</a></h3>
-            </div>
-        </li>
+        
+        <div class="dropdown-content">
+            <h3><a href="index.html">Atrás</a></h3>
+        </div>
+        
     </ul>
 </body>
 </html>
