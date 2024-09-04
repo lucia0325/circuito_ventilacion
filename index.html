@@ -78,7 +78,82 @@
         .card-img.materiales {
             background-image: url('imagenmateriales.png');
         }
+
+        .back-button {
+            background-color: #31293F;
+            color: #ffffff;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            border-radius: 5px;
+            margin-top: 20px;
+            font-size: 16px;
+            box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .back-button:hover {
+            background-color: #4a3b59;
+        }
+
+        .back-button-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 30px;
+        }
+        
     </style>
+    <script>
+        function teletipo(cad, tmp, iden, cnt) {
+            if (cnt == null) cnt = 0;
+            var letra = cad.substr(cnt, 1);
+            var cuadro = document.getElementById(iden);
+            while (letra == " ") {
+                cnt++;
+                letra += cad.substr(cnt, 1);
+            }
+            cuadro.innerHTML += letra;
+            cnt++;
+            if (cnt < cad.length) {
+                setTimeout(teletipo, tmp, cad, tmp, iden, cnt);
+            }
+        }
+    </script>
+    <script>
+        function animaTitulo(ini)
+        {
+        if (ini){
+           document.title = document.title.replaceAll(" ","\xA0")+"-";
+           ini = false;
+        }
+        var actual = document.title;
+        var ind;
+        if(actual[0]=="\xA0")
+            ind=2;
+        else
+           ind=1;
+        sp = actual.substring(0, ind);
+        document.title = actual.substr(ind)+sp;
+        setTimeout(animaTitulo, 220,ini);
+        }
+        </script>
+        <script>
+            function teletipo(cad, tmp, iden, cnt) {
+                if (cnt== null) cnt=0;
+                var letra = cad.substr(cnt,1)
+                cuadro=document.getElementById(iden);
+                while (letra == " ")
+                  {
+                  cnt++;
+                  letra += cad.substr(cnt,1);
+                 }
+                cuadro.innerHTML += letra;
+                cnt++
+                if (cnt < cad.length){
+                   tempor=setTimeout(teletipo,tmp,cad,tmp,iden,cnt); 
+                 }
+            }
+            </script>
 </head>
 <body>
     <h1>Circuito de ventilación Automática de Temperatura</h1>
@@ -86,7 +161,7 @@
 
     <div class="container">
         <h2>INTRODUCCION</h2>
-        <p>Bienvenidos a nuestra página dedicada al Circuito de Ventilación Automática de Temperatura, un innovador sistema diseñado para optimizar el control de la temperatura en diversos entornos. Aquí encontrarás información detallada sobre el circuito. Exploraremos los componentes esenciales, el funcionamiento del sistema, y cómo puede ser implementado para automatizar la ventilación en cualquier espacio.</p>
+        <p id="marco"></p>
 
         <div class="card">
             <ul class="dropdown">
@@ -103,6 +178,19 @@
                 </div>
             </ul>
         </div>
+        
+        <div class="back-button-container">
+            <a class="back-button" href=https://docs.google.com/forms/d/e/1FAIpQLSfahSLr7Vn9e1Fr7jVlbN0yf4rDgZhOc913Xt5zaSpNOYsToA/viewform>LINK ENCUESTA</a>
+        </div>
     </div>
+
+    <script language="javascript">
+        teletipo("Bienvenidos a nuestra página dedicada al Circuito de Ventilación Automática de Temperatura, un innovador sistema diseñado para optimizar el control de la temperatura en diversos entornos. Aquí encontrarás información detallada sobre el circuito. Exploraremos los componentes esenciales, el funcionamiento del sistema, y cómo puede ser implementado para automatizar la ventilación en cualquier espacio.", 50, 'marco');
+    </script>
+   
+    
+        </body>
+        <body onload="iniNevada(100,80)" style="background:#31293F">
+        </body>
 </body>
 </html>

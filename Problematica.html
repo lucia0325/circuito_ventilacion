@@ -87,32 +87,94 @@
             color: #ffffff;
         }
     </style>
+    <script>
+        class oCopo{
+          constructor(tam, id){
+             this.x = 0;
+             this.y = 0;
+             this.size = tam;
+             this.nombre = id
+             this.obj = document.createElement("div");
+             this.obj.setAttribute('id',id);
+             this.obj.innerText="*";
+             this.obj.style.position = "absolute";
+             this.obj.style.fontSize = tam+"px";
+             this.obj.style.color = "white";
+             document.body.appendChild(this.obj)
+        }
+        dibujar(x,y){
+             this.x = x;
+             this.y = y;
+             this.obj.style.top = this.y+"px";
+             this.obj.style.left = this.x+"px";
+             }
+        }
+        function iniCopos(num, anc, alto){
+           var copos = new Array(num);
+           var tam, x, y;
+           for (let i = 0; i<num; i++)
+             {
+             tam = Math.round(Math.random()*10)+ 8;
+             copos[i] = new oCopo(tam, "c"+i);
+             x = parseInt(Math.random()*anc);
+             y = parseInt(Math.random()*alto);
+             copos[i].dibujar(x,y);
+             }
+        return copos;
+        }
+        function iniNevada(num, vel)
+        {
+        var ancho = document.body.offsetWidth-10;
+        var alto = window.innerHeight-10;
+        var losCopos = iniCopos(num, ancho, alto)
+        nevar(losCopos, ancho,alto, vel);
+        } 
+        function nevar(copos, coposAncho, coposAlto, vel)
+        {
+        var x, y;
+        for (let i = 0; i < copos.length; i++)
+            {
+            y = copos[i].y;
+        x = copos[i].x;
+            if (Math.random() > 0.5)
+                y += parseInt(Math.random()+1);
+            y += parseInt(Math.random()+2);
+            if (y >= (coposAlto - copos[i].size))
+                {
+                y = Math.round(Math.random()*10);
+                x  =parseInt(Math.random()*coposAncho-1); 
+                }
+        copos[i].dibujar(x,y); 
+            }
+        setTimeout(nevar, vel, copos,  coposAncho, coposAlto, vel);
+        }
+        </script>
+         <script>
+            function teletipo(cad, tmp, iden, cnt) {
+                if (cnt == null) cnt = 0;
+                var letra = cad.substr(cnt, 1)
+                var cuadro = document.getElementById(iden);
+                while (letra == " ") {
+                    cnt++;
+                    letra += cad.substr(cnt, 1);
+                }
+                cuadro.innerHTML += letra;
+                cnt++;
+                if (cnt < cad.length) {
+                    setTimeout(teletipo, tmp, cad, tmp, iden, cnt);
+                }
+            }
+            </script>
 </head>
 
-<body>
+<body onload="iniNevada(100,80)">
 
     <h1>Problemática</h1>
     <span id="title-bar"></span>
 
     <div class="content">
         <div class="text-box">
-            <h3>
-                Se ha notado que, en las aulas de la institución se llega a tener altas temperaturas a ciertas horas del
-                día, lo que puede generar un impacto negativo en el aprendizaje de los estudiantes y, por ende, en su
-                desempeño en general; en varios entornos, desde los espacios generales del colegio hasta lugares específicos como la
-                Biblioteca del colegio Brasilia Bosa IED. Este efecto es más notable durante las horas de la tarde, lo que, a su
-                vez, puede causar malestares tales como estrés, incomodidad, malos olores, bajo rendimiento académico, entre
-                otros. Además, el personal docente también se ve afectado al tratar de mantener un ambiente óptimo para la
-                enseñanza en estas condiciones. Las altas temperaturas no solo afectan el bienestar de los estudiantes y el
-                personal docente, sino que también pueden dañar los recursos educativos. Los libros y materiales de estudio
-                (como los computadores y el televisor de la sala) son sensibles a las condiciones de temperatura y humedad, lo
-                que puede llevar a su deterioro. Esto aumenta los costos de reemplazo y dificulta el acceso a recursos
-                esenciales para la educación. En este contexto, la biblioteca se convierte en un punto de enfoque crucial. Como
-                un espacio destinado para el estudio y la investigación, debería ser un refugio que fomente el conocimiento y el
-                desarrollo académico. Sin embargo, las altas temperaturas pueden convertir este espacio en un lugar incómodo y
-                poco propicio para el estudio, lo que, a su vez, desincentiva a los estudiantes a utilizarlo de manera efectiva
-                y productiva para el fin de aprender.
-            </h3>
+            <p id="marco"></p>
         </div>
 
         <div class="image-box">
@@ -124,6 +186,10 @@
     <div class="dropdown-content">
         <a href="index.html">Atrás</a>
     </div>
+
+    <script language="javascript">
+        teletipo("Se ha notado que, en las aulas de la institución se llega a tener altas temperaturas a ciertas horas del día, lo que puede generar un impacto negativo en el aprendizaje de los estudiantes y, por ende, en su desempeño en general; en varios entornos, desde los espacios generales del colegio hasta lugares específicos como la Biblioteca del colegio Brasilia Bosa IED. Este efecto es más notable durante las horas de la tarde, lo que, a su vez, puede causar malestares tales como estrés, incomodidad, malos olores, bajo rendimiento académico, entre otros. Además, el personal docente también se ve afectado al tratar de mantener un ambiente óptimo para la enseñanza en estas condiciones. Las altas temperaturas no solo afectan el bienestar de los estudiantes y el personal docente, sino que también pueden dañar los recursos educativos. Los libros y materiales de estudio (como los computadores y el televisor de la sala) son sensibles a las condiciones de temperatura y humedad, lo que puede llevar a su deterioro. Esto aumenta los costos de reemplazo y dificulta el acceso a recursos esenciales para la educación. En este contexto, la biblioteca se convierte en un punto de enfoque crucial. Como un espacio destinado para el estudio y la investigación, debería ser un refugio que fomente el conocimiento y el desarrollo académico. Sin embargo, las altas temperaturas pueden convertir este espacio en un lugar incómodo y poco propicio para el estudio, lo que, a su vez, desincentiva a los estudiantes a utilizarlo de manera efectiva y productiva para el fin de aprender.", 50, "marco");
+    </script>
 
 </body>
 
